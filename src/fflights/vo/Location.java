@@ -1,5 +1,12 @@
 package fflights.vo;
 
+/*
+ * CRC Responsibilities
+ *   - Hold GPS Location information about a Country and City
+ *   - Answer questions about
+ *     - Distance from another GPS Location
+ */
+
 // Country Codes:
 //   http://takahikokawasaki.github.io/nv-i18n/
 // Calculate Distance:
@@ -14,52 +21,60 @@ package fflights.vo;
  *
  *  % java LocationTest
  *  172.367 miles from
- *  PRINCETON_NJ (40.366633, 74.640832) to ITHACA_NY (42.443087, 76.488707)
+ *  United States, Princeton (40.366633, 74.640832) to United States, Ithaca (42.443087, 76.488707)
  *
  ******************************************************************************/
 
+/*
+ * DEVELOPER NOTE: __STUDENT_PUT_SOME_DOCUMENTATION_HERE__
+ */
 public class Location { 
-    private String name;
-    private double longitude;
-    private double latitude;
+    private String country;
+    private String city;
+    private double longitude;  // NOTE: in degrees
+    private double latitude;   // NOTE: in degrees
+    
+    public static final double MILES_PER_NAUTICAL_MILE = 1.15077945;
 
-    // create and initialize a point with given name and
-    // (latitude, longitude) specified in degrees
-    public Location(String name, double latitude, double longitude) {
-        this.name = name;
+    public Location(String country, 
+    		        String city, 
+    		        double latitude, 
+    		        double longitude  
+    		       ) {
+        this.country   = country;
+        this.city      = city;
         this.latitude  = latitude;
         this.longitude = longitude;
     }
 
-    // return distance between this location and that location
+    // Calculate the distance between this location and that location
     // measured in statute miles
     public double distanceTo(Location that) {
-        double STATUTE_MILES_PER_NAUTICAL_MILE = 1.15077945;
         double lat1 = Math.toRadians(this.latitude);
         double lon1 = Math.toRadians(this.longitude);
         double lat2 = Math.toRadians(that.latitude);
         double lon2 = Math.toRadians(that.longitude);
 
-        // great circle distance in radians, using law of cosines formula
-        double angle = Math.acos(Math.sin(lat1) * Math.sin(lat2)
-                               + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));
+        // Great circle distance in Radians, using law of cosines formula
+        double angle = Math.acos(Math.sin(lat1) * Math.sin(lat2) +
+                                 Math.cos(lat1) * Math.cos(lat2) *
+                                 Math.cos(lon1 - lon2));
 
-        // each degree on a great circle of Earth is 60 nautical miles
+        // Each degree on a great circle of Earth is 60 nautical miles
         double nauticalMiles = 60 * Math.toDegrees(angle);
-        double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;
+        double statuteMiles  = MILES_PER_NAUTICAL_MILE * nauticalMiles;
         return statuteMiles;
     }
 
-    // return string representation of this point
     public String toString() {
-        return name + " (" + latitude + ", " + longitude + ")";
+        return country + ", " + city + " (" + latitude + ", " + longitude + ")";
     }
 
 
-    // test client
+    // Test client
     public static void main(String[] args) {
-        Location loc1 = new Location("PRINCETON_NJ", 40.366633, 74.640832);
-        Location loc2 = new Location("ITHACA_NY",    42.443087, 76.488707);
+        Location loc1 = new Location("United States", "Princeton", 40.366633, 74.640832);
+        Location loc2 = new Location("United States", "Ithaca",    42.443087, 76.488707);
         double distance = loc1.distanceTo(loc2);
         System.out.printf("%6.3f miles from\n", distance);
         System.out.println(loc1 + " to " + loc2);

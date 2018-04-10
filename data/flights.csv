@@ -1,0 +1,49 @@
+airport_id,name,city,country,iata_faa,iaco,latitude,longitude,altitude,zone,dst,miles,cost
+93,Montreal Intl Mirabel,Montreal,Canada,YMX,CYMX,45.681944,-74.005278,270,-5,A,2137,718
+100,Ottawa Macdonald Cartier Intl,Ottawa,Canada,YOW,CYOW,45.3225,-75.669167,374,-5,A,2068,680
+111,Quebec Jean Lesage Intl,Quebec,Canada,YQB,CYQB,46.791111,-71.393333,244,-5,A,2234,746
+120,Regina Intl,Regina,Canada,YQR,CYQR,50.431944,-104.665833,1894,-6,N,722,621
+156,Vancouver Intl,Vancouver,Canada,YVR,CYVR,49.193889,-123.184444,14,-8,A,276,553
+160,Winnipeg Intl,Winnipeg,Canada,YWG,CYWG,49.910036,-97.239886,783,-6,A,1036,602
+178,Calgary Intl,Calgary,Canada,YYC,CYYC,51.113888,-114.020278,3557,-7,A,407,616
+184,Victoria Intl,Victoria,Canada,YYJ,CYYJ,48.646944,-123.425833,63,-8,A,259,621
+193,Lester B Pearson Intl,Toronto,Canada,YYZ,CYYZ,43.677223,-79.630556,569,-5,A,1919,694
+415,Tallinn,Tallinn-ulemiste International,Estonia,TLL,EETN,59.413317,24.832844,131,2,E,4856,934
+797,Cape Town Intl,Cape Town,South Africa,CPT,FACT,-33.964806,18.601667,151,2,U,10082,1258
+813,Johannesburg Intl,Johannesburg,South Africa,JNB,FAJS,-26.139166,28.246,5558,2,U,10176,1288
+1382,Charles De Gaulle,Paris,France,CDG,LFPG,49.012779,2.55,392,1,E,4983,991
+1800,Cozumel Intl,Cozumel,Mexico,CZM,MMCZ,20.522403,-86.925644,15,-6,S,2540,670
+1826,General Rafael Buelna Intl,Mazatlan,Mexico,MZT,MMMZ,23.161356,-106.266072,38,-7,S,1750,624
+1836,Licenciado Gustavo Diaz Ordaz Intl,Puerto Vallarta,Mexico,PVR,MMPR,20.680083,-105.254167,23,-6,S,1933,719
+1840,Los Cabos Intl,San Jose Del Cabo,Mexico,SJD,MMSD,23.15185,-109.721044,374,-7,S,1681,770
+1847,General Abelardo L Rodriguez Intl,Tijuana,Mexico,TIJ,MMTJ,32.541064,-116.970158,489,-8,S,955,672
+1852,Cancun Intl,Cancun,Mexico,CUN,MMUN,21.036528,-86.877083,20,-6,S,2514,846
+2170,Queen Alia Intl,Amman,Jordan,AMM,OJAI,31.722556,35.993214,2395,2,E,6830,1045
+2172,Aqaba King Hussein Intl,Aqaba,Jordan,AQJ,OJAQ,29.611619,35.018067,175,2,E,6952,1207
+2370,Jeju Intl,Cheju,South Korea,CJU,RKPC,33.511306,126.493028,118,9,U,5580,918
+2372,Gimhae Intl,Busan,South Korea,PUS,RKPK,35.179528,128.938222,6,9,U,5402,1099
+3205,Tansonnhat Intl,Ho Chi Minh City,Vietnam,SGN,VVTS,10.818797,106.651856,33,7,U,7585,1135
+3339,Melbourne Intl,Melbourne,Australia,MEL,YMML,-37.673333,144.843333,434,10,O,8289,1154
+3341,Adelaide Intl,Adelaide,Australia,ADL,YPAD,-34.945,138.530556,20,9.5,O,8456,1227
+3361,Sydney Intl,Sydney,Australia,SYD,YSSY,-33.946111,151.177222,21,10,O,7852,1295
+3448,General Edward Lawrence Logan Intl,Boston,United States,BOS,KBOS,42.364347,-71.005181,19,-5,A,2357,842
+3469,San Francisco Intl,San Francisco,United States,SFO,KSFO,37.618972,-122.374889,13,-8,A,620,642
+3484,Los Angeles Intl,Los Angeles,United States,LAX,KLAX,33.942536,-118.408075,126,-8,A,852,602
+3492,Juneau Intl,Juneau,United States,JNU,PAJN,58.354972,-134.576278,21,-9,A,1055,540
+3577,Seattle Tacoma Intl,Seattle,United States,SEA,KSEA,47.449,-122.309306,433,-8,A,171,566
+3621,San Antonio Intl,San Antonio,United States,SAT,KSAT,29.533694,-98.469778,809,-6,A,1604,759
+3630,Niagara Falls Intl,Niagara Falls,United States,IAG,KIAG,43.107333,-78.946194,589,-5,A,1964,813
+3714,Washington Dulles Intl,Washington,United States,IAD,KIAD,38.944533,-77.455811,313,-5,A,2152,747
+3720,Portland Intl,Portland,United States,PDX,KPDX,45.588722,-122.5975,30,-8,A,173,573
+3728,Honolulu Intl,Honolulu,United States,HNL,PHNL,21.318681,-157.922428,13,-10,N,2773,802
+3731,San Diego Intl,San Diego,United States,SAN,KSAN,32.733556,-117.189667,17,-8,A,940,635
+3797,John F Kennedy Intl,New York,United States,JFK,KJFK,40.639751,-73.778925,13,-5,A,2276,709
+3820,Buffalo Niagara Intl,Buffalo,United States,BUF,KBUF,42.940525,-78.732167,724,-5,A,1978,633
+3830,Chicago Ohare Intl,Chicago,United States,ORD,KORD,41.978603,-87.904842,668,-6,A,1566,610
+3858,Minneapolis St Paul Intl,Minneapolis,United States,MSP,KMSP,44.881956,-93.221767,841,-6,A,1250,637
+3877,Mc Carran Intl,Las Vegas,United States,LAS,KLAS,36.080056,-115.15225,2141,-8,A,733,708
+3930,Incheon Intl,Seoul,South Korea,ICN,RKSI,37.469075,126.450517,23,9,U,5371,1007
+3941,Eleftherios Venizelos Intl,Athens,Greece,ATH,LGAV,37.936358,23.944467,308,2,E,6187,1101
+4288,Heydar Aliyev,Baku,Azerbaijan,BAK,,40.4675,50.046667,10,4,E,6409,1033
+6133,Tri Cities Airport,Pasco,United States,PSC,PSC,46.2647,-119.119,410,-8,A,0,0
+7708,Amsterdam Centraal,Amsterdam,Netherlands,ZYA,,52.7873,4.90074,0,1,E,4840,857
