@@ -66,6 +66,14 @@ public class Location {
         return statuteMiles;
     }
 
+    public String getCountry() {
+    	return country;
+    }
+    
+    public String getCity() {
+    	return city;
+    }
+    
     public String toString() {
         return country + ", " + city + " (" + latitude + ", " + longitude + ")";
     }
