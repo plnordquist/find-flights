@@ -25,8 +25,9 @@ public class Photo {
 	             int sad,
 	             int angry
 	            ) {
-		this.positive = like + love + haha + wow;
-		this.negative = sad + angry;
+		this.location  = location;
+		this.positive  = like + love + haha + wow;
+		this.negative  = sad + angry;
 		this.reactions = positive + negative;
 	}
 	
@@ -44,6 +45,10 @@ public class Photo {
 	
 	public boolean isNegative() {
 		return (! isPositive());
+	}
+	
+	public String toString() {
+		return location.toString() + ", Reactions:" + getNumberReactions() + ", Positive:" + isPositive();
 	}
 
 /**
