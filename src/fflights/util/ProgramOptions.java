@@ -28,6 +28,7 @@ public class ProgramOptions {
 	private String  photos_file_val;
 	private String  hotels_file_val;
 	private String  reactions_val;      // TODO: This should be an ENUM type
+	private boolean reactions_type_val;
 	private int     min_reactions_val;
 	private int     min_miles_val;
 	private int     max_miles_val;
@@ -93,18 +94,19 @@ public class ProgramOptions {
 	private HelpFormatter     formatter = new HelpFormatter();
     private CommandLineParser parser    = new DefaultParser();
 	
-	public String  getFlightsFile()  { return flights_file_val;  }
-	public String  getPhotosFile()   { return photos_file_val;   }
-	public String  getHotelsFile()   { return hotels_file_val;   }
-	public String  getReactions()    { return reactions_val;     }
-	public int     getMinReactions() { return min_reactions_val; }
-	public int     getMinMiles()     { return min_miles_val;     }
-	public int     getMaxMiles()     { return max_miles_val;     }
-	public int     getMaxMeters()    { return max_meters_val;    }
-	public int     getMinReviews()   { return min_reviews_val;   }
-	public int     getMinCost()      { return min_cost_val;      }
-	public int     getMaxCost()      { return max_cost_val;      }
-	public double  getMinRating()    { return min_rating_val;    }
+	public String  getFlightsFile()  { return flights_file_val;   }
+	public String  getPhotosFile()   { return photos_file_val;    }
+	public String  getHotelsFile()   { return hotels_file_val;    }
+	public String  getReactions()    { return reactions_val;      }
+	public boolean getReactionType() { return reactions_type_val; }
+	public int     getMinReactions() { return min_reactions_val;  }
+	public int     getMinMiles()     { return min_miles_val;      }
+	public int     getMaxMiles()     { return max_miles_val;      }
+	public int     getMaxMeters()    { return max_meters_val;     }
+	public int     getMinReviews()   { return min_reviews_val;    }
+	public int     getMinCost()      { return min_cost_val;       }
+	public int     getMaxCost()      { return max_cost_val;       }
+	public double  getMinRating()    { return min_rating_val;     }
 	
 	private boolean valueIntRangeCheck(String option, int value, int min, int max) {
 		if (value >= min && value <= max) {
@@ -222,6 +224,7 @@ public class ProgramOptions {
 	        		reactions_val = cmdline.getOptionValue("reactions");
 	        		verboseOut("Arg Reactions:" + reactions_val + ":");
 	        		valueStringCheck("reactions", reactions_val, new String []{ "positive", "negative" });
+	        		reactions_type_val = (reactions_val.equalsIgnoreCase("positive")) ? true : false;
 	        	}	        
 	        }
 	        if (cmdline.hasOption("min-miles") ) {

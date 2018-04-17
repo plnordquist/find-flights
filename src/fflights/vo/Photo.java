@@ -49,6 +49,10 @@ public class Photo {
 		return location;
 	}
 	
+	public double getMiles(Location location) {
+		return this.location.distanceTo(location);
+	}
+	
 	public int getNumberReactions() {
 		return reactions;
 	}
