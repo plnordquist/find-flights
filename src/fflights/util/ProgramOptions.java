@@ -1,5 +1,13 @@
 package fflights.util;
 
+/*
+ * CRC Responsibilities
+ *   - Process command line arguments
+ *   - Check to make sure values to arguments are valid
+ *   - Answer questions about
+ *     - Command line option values
+ */
+
 import java.io.File;
 import java.util.Arrays;
 

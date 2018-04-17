@@ -1,5 +1,7 @@
 package fflights.vo;
 
+import java.util.StringJoiner;
+
 /*
  * CRC Responsibilities
  *   - Hold information about a Facebook Photo
@@ -12,7 +14,13 @@ package fflights.vo;
  * DEVELOPER NOTE: __STUDENT_PUT_SOME_DOCUMENTATION_HERE__
  */
 public class Photo {
-	private Location location; 
+	private Location location;
+	private int like;
+	private int love;
+	private int haha;
+	private int wow;
+	private int sad;
+	private int angry;
 	private int positive;  // = like + love + haha + wow
 	private int negative;  // = sad + angry
 	private int reactions; // = positive + negative
@@ -26,6 +34,12 @@ public class Photo {
 	             int angry
 	            ) {
 		this.location  = location;
+		this.like      = like;
+		this.love      = love;
+		this.haha      = haha;
+		this.wow       = wow;
+		this.sad       = sad;
+		this.angry     = angry;
 		this.positive  = like + love + haha + wow;
 		this.negative  = sad + angry;
 		this.reactions = positive + negative;
@@ -49,6 +63,17 @@ public class Photo {
 	
 	public String toString() {
 		return location.toString() + ", Reactions:" + getNumberReactions() + ", Positive:" + isPositive();
+	}
+	
+	public String toCSV() {
+		StringJoiner joiner = new StringJoiner(",");
+		joiner.add(String.valueOf(like));
+		joiner.add(String.valueOf(love));
+		joiner.add(String.valueOf(haha));
+		joiner.add(String.valueOf(wow));
+		joiner.add(String.valueOf(sad));
+		joiner.add(String.valueOf(angry));
+		return location.toCSV() + "," + joiner.toString();
 	}
 
 /**

@@ -78,6 +78,9 @@ public class Location {
         return country + ", " + city + " (" + latitude + ", " + longitude + ")";
     }
 
+	public String toCSV() {
+		return country + "," + city + "," + latitude + "," + longitude;
+	}
 
     // Test client
     public static void main(String[] args) {
@@ -87,4 +90,5 @@ public class Location {
         System.out.printf("%6.3f miles from\n", distance);
         System.out.println(loc1 + " to " + loc2);
     }
+
 }
