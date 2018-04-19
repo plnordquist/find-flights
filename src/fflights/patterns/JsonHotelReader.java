@@ -28,14 +28,14 @@ public class JsonHotelReader implements HotelReader {
             for (Object record : allArray) {
 	            String city         = (String) ((JSONObject) record).get("city");
             	String country      = (String) ((JSONObject) record).get("country");
-	            double distance     = (double) ((JSONObject) record).get("distance");
+	            double meters       = (double) ((JSONObject) record).get("distance");
 	            double latitude     = (double) ((JSONObject) record).get("latitude");
 	            double longitude    = (double) ((JSONObject) record).get("longitude");
 	            String name         = (String) ((JSONObject) record).get("name");
 	            String price        = (String) ((JSONObject) record).get("price");
 	            double rating       = (double) ((JSONObject) record).get("rating");
 	            Long   review_count = (Long)   ((JSONObject) record).get("review_count");
-	            Hotel  hotel        = new Hotel(new Location(country, city, latitude, longitude), name, price, distance, rating, review_count.intValue());
+	            Hotel  hotel        = new Hotel(new Location(country, city, latitude, longitude), name, price, meters, rating, review_count.intValue());
 	            hotels.add(hotel);
 	        }
 	    } catch (ParseException | IOException e) {

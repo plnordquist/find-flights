@@ -14,9 +14,9 @@ public class HotelReaderFactory extends AbstractHotelReaderFactory {
       if (testname.endsWith("json")) {
          return new JsonHotelReader(filename);
       } 
-//      else if (testname.endsWith("csv")) {
-//         return new CSVHotelReader(filename); 
-//      }   
+      else if (testname.endsWith("csv")) {
+         return new CSVHotelReader(filename); 
+      }   
       return null;
    }   
 }

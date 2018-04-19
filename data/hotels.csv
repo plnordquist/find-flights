@@ -1,4 +1,4 @@
-country,city,latitude,longitude,name,cost,meters,rating,num_reviews
+country,city,latitude,longitude,name,price,meters,rating,review_count
 Canada,Laval,45.559266,-73.839814,Le Fabreville,$$$,18752.899054514462,3.0,2
 Canada,Ottawa,45.417043,-75.707199,Albert At Bay Suite Hotel,$$,10924.435333147603,4.0,35
 Canada,Quebec City,46.814638,-71.202996,Hotel 71,$$$,14721.616779691727,4.5,34

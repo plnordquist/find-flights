@@ -96,7 +96,7 @@ public class FindFlights {
 		HotelReader hotelReader = hotelReaderFactory.getHotelReader(hotelsFilename);
 		List<Hotel> hotels = hotelReader.getHotels();
 		
-//		System.out.println("country,city,latitude,longitude,name,cost,meters,rating,num_reviews");
+//		System.out.println("country,city,latitude,longitude,name,price,meters,rating,review_count");
 //	    for (Hotel hotel : hotels) {
 //	    	//System.out.println(hotel.toCSV());
 //	    	System.out.println("HOTEL:" + hotel.toString());
@@ -128,11 +128,13 @@ public class FindFlights {
   	        }
     	}
     	
+		count = 1;
     	for (Flight vacation : vacations.keySet()) {
-    		System.out.println("FLIGHT:" + vacation.toString());
+    		System.out.println("FLIGHT:" + count + ":" + vacation.toString());
     		for (Hotel hotel : vacations.get(vacation)) {
         		System.out.println("  HOTEL:" + hotel.toString());
     		}
+    		++count;
     	}
 	    
 	    System.exit(0);	    
