@@ -1,5 +1,7 @@
 package fflights.vo;
 
+import java.util.StringJoiner;
+
 /*
  * CRC Responsibilities
  *   - Hold information about a Hotel at some Location
@@ -17,9 +19,10 @@ public class Hotel {
     private Location location;
     private String name;
     private String cost;
+    private int    cost_len;
     private double meters;
     private double rating;
-    private int num_reviews;
+    private int    num_reviews;
     
     public Hotel(Location location, 
     		        String name,
@@ -34,6 +37,7 @@ public class Hotel {
         this.meters      = meters;
         this.rating      = rating;
         this.num_reviews = num_reviews;
+        this.cost_len    = cost.length();
     }
 
 	public Location getLocation() {
@@ -44,12 +48,19 @@ public class Hotel {
 		return meters;
 	}
 	
+	public double getMiles() {
+		return meters/1609.34;
+	}
 	public double getRating() {
 		return rating;
 	}
 	
 	public String getCost() {
 		return cost;
+	}
+	
+	public int getCostLength() {
+		return cost_len;
 	}
 	
 	public String getName() {
@@ -61,14 +72,32 @@ public class Hotel {
 	}
 	
     public String toString() {
-        return "Hotel, " + name + ", at Location: " + location.getCountry() + ", " + location.getCity() + ", is " + meters + " meters away from the airport";
+        return "HOTEL:" + name + ", LOCATION: " + location.toString() + ", MILES:" + getMiles() + ", METERS:" + getMeters() + ", COST:" + getCost() + ", RATING:" + getRating() + ", REVIEWS:" + getNumReviews();
     }
     
+	public String toCSV() {
+		StringJoiner joiner = new StringJoiner(",");
+		joiner.add(name);
+		joiner.add(cost);
+		joiner.add(String.valueOf(meters));
+		joiner.add(String.valueOf(rating));
+		joiner.add(String.valueOf(num_reviews));
+		return location.toCSV() + "," + joiner.toString();
+	}
+	
     // Test client
     public static void main(String[] args) {
-        // JSON: "{name":"Imperia Hotel et Suites","price":"$$","rating":3.5,"review_count":4,"location":{"city":"Saint-Eustache","country":"CA"},"coordinates":{"latitude":45.581035,"longitude":-73.882618},"distance":14726.299645023084}
-        Location location = new Location("Canada", "Saint-Eustache", 45.581035, -73.882618);
-        Hotel hotel = new Hotel(location, "Imperia Hotel et Suites", "$$", 14726.299645023084, 3.5, 4);
+        // JSON:  { "city":         "Airport West", 
+    	//          "country":      "Australia", 
+    	//          "distance":     5871.404152234879, 
+    	//          "latitude":     -37.71217, 
+    	//          "longitude":    144.888543, 
+    	//          "name":         "Skyways International Hotel Motel", 
+    	//          "price":        "$$$", 
+    	//          "rating":       1.5, 
+    	//          "review_count": 3 }     
+    	Location location = new Location("Australia", "Airport West", -37.71217, 144.888543);
+        Hotel hotel = new Hotel(location, "Skyways International Hotel Motel", "$$$", 5871.404152234879, 1.5, 3);
         System.out.println(hotel.toString());
     }
 }

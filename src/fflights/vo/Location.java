@@ -65,6 +65,13 @@ public class Location {
         double statuteMiles  = MILES_PER_NAUTICAL_MILE * nauticalMiles;
         return statuteMiles;
     }
+    
+    public boolean proximityTo(Location that, int miles) {
+    	if (distanceTo(that) < miles) {
+    		return true;
+    	}
+    	return false;
+    }
 
     public String getCountry() {
     	return country;

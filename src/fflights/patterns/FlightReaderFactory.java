@@ -14,12 +14,9 @@ public class FlightReaderFactory extends AbstractFlightReaderFactory {
       if (testname.endsWith("json")) {
          return new JsonFlightReader(filename);
       } 
-//
-//  TODO: NOTE: We should add a CSVFlightReader
-//
-//      else if (filetype.equalsIgnoreCase("CSV")) {
-//         return new CSVFlightReader(); 
-//      }   
+      else if (testname.endsWith("csv")) {
+         return new CSVFlightReader(filename); 
+      }   
       return null;
    }   
 }

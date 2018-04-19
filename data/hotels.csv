@@ -1,0 +1,42 @@
+country,city,latitude,longitude,name,cost,meters,rating,num_reviews
+Canada,Laval,45.559266,-73.839814,Le Fabreville,$$$,18752.899054514462,3.0,2
+Canada,Ottawa,45.417043,-75.707199,Albert At Bay Suite Hotel,$$,10924.435333147603,4.0,35
+Canada,Quebec City,46.814638,-71.202996,Hotel 71,$$$,14721.616779691727,4.5,34
+Canada,Regina,50.4472456506344,-104.607206216602,Ramada Plaza Regina Downtown,$$,4487.00071431834,2.5,7
+Canada,Vancouver,49.28297,-123.11597,St. Regis Hotel,$$,11091.308944021952,4.5,72
+Canada,Winnipeg,49.898996343803,-97.1324497793099,Mere Hotel,$$$,7791.512975533282,4.5,11
+Canada,Calgary,51.1310537753213,-114.008367061615,Delta Hotels Calgary Airport In-Terminal,$$,2081.910951276926,3.5,24
+Canada,Saanichton,48.59453,-123.39719,Quality Inn-Waddling Dog,$$,6204.915123885966,4.0,8
+Canada,Toronto,43.68762,-79.60034,Holiday Inn Toronto International Airport,$$,2689.6604459305713,3.0,29
+United Kingdom,NW9,-33.8940795653327,18.5061193630099,Colosseum Luxury Hotel,,11813.513929321716,0.0,0
+France,Roissy,49.010735,2.560809,Hotel Ibis Paris CDG Airport,$$,820.443813886924,3.0,23
+Mexico,Coxumel,20.550891,-86.925757,El Cozumele Beach Resort,$$,3167.7394101396476,3.0,24
+Mexico,Mazatlan,23.2689818926984,-106.466209928148,El Cid Marina Beach Hotel,$$,23696.404848773018,4.0,11
+Mexico,Jarretaderas,20.6835210976764,-105.28909598062,The Grand Mayan,$$$,3653.682406734361,2.5,71
+Mexico,San Jose del Cabo,23.0633959,-109.696493,Hotel el Encanto Inn,$$,10151.08118667202,4.0,8
+Mexico,Tijuana,32.5116887362294,-116.998961038029,Tijuana Marriott Hotel,$$,4238.072328652881,4.0,48
+Mexico,Cancun,21.0551921795315,-86.7816509563477,GR Solaris,$$,10118.799727461432,3.0,89
+Japan,Tsushima,34.6408232299,129.393294113,Hotel,,72869.92345723911,0.0,0
+Australia,Airport West,-37.71217,144.888543,Skyways International Hotel Motel,$$$,5871.404152234879,1.5,3
+Australia,Adelaide,-34.931358,138.570003,The Hilton Hotel,$$,3902.6319689847287,3.5,13
+Australia,Annandale,-33.88752,151.171482,Annandale Hotel,$$,6536.509309884184,4.0,20
+United States,Boston,42.349229,-71.079528,The Lenox Hotel,$$$,6336.08238681385,4.5,202
+United States,Burlingame,37.59161,-122.34802,Embassy Suites by Hilton San Francisco Airport Waterfront,$$,3852.8211695932337,2.5,302
+United States,Gardena,33.8862737,-118.3084662,Gardena Terrace Inn,$,11118.670245107338,4.0,211
+United States,Juneau,58.2992744445801,-134.407516479492,Wings Lodge,,11621.418640386897,5.0,21
+United States,Renton,47.4642108,-122.2195046,Larkspur Landing Renton,$$,6960.274108927901,3.5,97
+United States,San Antonio,29.5301854956385,-98.4836989914611,Embassy Suites by Hilton San Antonio Airport,$$,1402.1996144822306,3.5,56
+United States,Niagara Falls,43.0866589,-79.0591253,Sheraton Niagara Falls,$$,9453.150822217705,2.5,115
+United States,Herndon,38.95588,-77.42816,The Westin Washington Dulles Airport,$$,2704.06898754795,3.0,94
+United States,Portland,45.572945,-122.560623,Aloft Portland Airport at Cascade Station,$$,3363.6844256742306,4.0,199
+United States,Honolulu,21.28487,-157.83903,The Modern Honolulu,$$$,9425.88128134457,4.0,548
+United States,San Diego,32.7162259184028,-117.164393663406,The Sofia Hotel,$$,3050.059581113572,4.0,719
+United States,Jamaica,40.6673199,-73.79849,Radisson Hotel JFK Airport,$$,3483.192130267699,2.0,65
+United States,Buffalo,42.907289905019,-78.7703658986993,Residence Inn by Marriott Buffalo Galleria Mall,$$,4830.227400038984,4.0,31
+United States,Rosemont,41.97747,-87.86447,Crowne Plaza Chicago Ohare Hotel & Conf Ctr,$$,3343.4211001245317,3.0,161
+United States,Bloomington,44.861096,-93.244378,Minneapolis Airport Marriott,$$,2924.8981562917047,3.0,66
+United States,Las Vegas,36.121189,-115.169657,The Venetian Las Vegas,$$$,4833.759414004051,4.0,3254
+United States,Guro-gu,37.5088218469515,126.889778114855,Sheraton D Cube City,$$$,39007.082906489464,5.0,5
+Malaysia,Sungkai,37.9331364660468,23.6885682656548,Coral Hotel Athens Greece,$$$$,22445.326591174722,1.5,2
+United States,Pasco,46.2534942626953,-119.115585327148,Best Western Plus Pasco Inn & Suites,$$,1273.1387988385868,4.5,31
+Netherlands,Winkel,52.7519468110552,4.91409036965161,Golfbaan Regthuys,,4032.387300488072,0.0,0

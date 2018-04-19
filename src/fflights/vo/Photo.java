@@ -8,6 +8,8 @@ import java.util.StringJoiner;
  *   - Answer questions about
  *     - Number of reactions
  *     - Are reactions positive or negative
+ *     - Provide a Human readable String representation of the Photo
+ *     - Provide a CSV file format representation of the Photo
  */
 
 /*
@@ -78,6 +80,14 @@ public class Photo {
 		joiner.add(String.valueOf(sad));
 		joiner.add(String.valueOf(angry));
 		return location.toCSV() + "," + joiner.toString();
+	}
+
+	public String getMood() {
+		if (isPositive())
+		{
+			return "positive";
+		}
+		return "negative";
 	}
 
 /**

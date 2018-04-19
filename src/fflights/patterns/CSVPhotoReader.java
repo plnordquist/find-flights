@@ -16,7 +16,7 @@ import fflights.util.Reaction;
 import fflights.vo.Photo;
 import fflights.vo.Location;
 
-public class JsonPhotoReader implements PhotoReader {
+public class CSVPhotoReader implements PhotoReader {
 
 	private String filename;
 	
@@ -27,7 +27,7 @@ public class JsonPhotoReader implements PhotoReader {
 	        File       file   = new File(filename);
 	        JSONParser parser = new JSONParser();
 	        JSONObject record = (JSONObject) parser.parse(new FileReader(file.getPath()));
-	        JSONArray  data   = (JSONArray)  record.get("data");
+	        JSONArray  data   = (JSONArray)record.get("data");
 
 	        for (int i = 0; i < data.size(); ++i) {
 		        String     dataRecord     = data.get(i).toString();
@@ -84,7 +84,7 @@ public class JsonPhotoReader implements PhotoReader {
 	    return photos;
 	}
 	
-	public JsonPhotoReader(String filename) {
+	public CSVPhotoReader(String filename) {
 		this.filename = filename;
 	}
 	

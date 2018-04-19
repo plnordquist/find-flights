@@ -224,7 +224,7 @@ public class ProgramOptions {
 	        		reactions_val = cmdline.getOptionValue("reactions");
 	        		verboseOut("Arg Reactions:" + reactions_val + ":");
 	        		valueStringCheck("reactions", reactions_val, new String []{ "positive", "negative" });
-	        		reactions_type_val = (reactions_val.equalsIgnoreCase("positive")) ? true : false;
+	        		//reactions_type_val = (reactions_val.equalsIgnoreCase("positive")) ? true : false;
 	        	}	        
 	        }
 	        if (cmdline.hasOption("min-miles") ) {
