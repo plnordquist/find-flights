@@ -7,6 +7,8 @@ import java.util.Map;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import fflights.patterns.FlightReader;
 import fflights.patterns.FlightReaderFactory;
@@ -19,6 +21,7 @@ import fflights.vo.Flight;
 import fflights.vo.Hotel;
 import fflights.vo.Location;
 import fflights.vo.Photo;
+import fflights.vo.Vacation;
 
 
 public class FindFlights {
@@ -129,13 +132,47 @@ public class FindFlights {
     	}
     	
 		count = 1;
-    	for (Flight vacation : vacations.keySet()) {
-    		System.out.println("FLIGHT:" + count + ":" + vacation.toString());
-    		for (Hotel hotel : vacations.get(vacation)) {
-        		System.out.println("  HOTEL:" + hotel.toString());
+		List<Vacation> vacationOptions = new ArrayList<>();
+    	for (Flight flight : vacations.keySet()) {
+//    		System.out.println("FLIGHT:" + count + ":" + flight.toString());
+    		for (Hotel hotel : vacations.get(flight)) {
+//        		System.out.println("  HOTEL:" + hotel.toString());
+        		Vacation vacation = new Vacation.Builder()
+        	            .withFlight(flight)
+        	            .withHotel(hotel)
+        	            .build();
+        		vacationOptions.add(vacation);
     		}
     		++count;
     	}
+    	
+		//  Sort by Estimated Costs
+		Collections.sort(vacationOptions, new Comparator<Vacation>() {
+			@Override
+			public int compare(Vacation v1, Vacation v2) {
+				int cost = v1.getVacationCostEstimate() - v2.getVacationCostEstimate();
+				if (cost == 0) {
+					int distance = v1.getDistanceFromOrigin() - v2.getDistanceFromOrigin();
+					if (distance == 0) {
+						double rating = v1.getHotelRating() - v2.getHotelRating();
+						if (Math.abs(rating) < 0.01) {
+							int reviews = v2.getNumReviews() - v1.getNumReviews();	
+							//System.out.println("CRAP:" + v1.getNumReviews());
+							return reviews;
+						}
+						return (int) rating;
+					}
+					return distance;
+				}
+				return cost;
+			}
+		});
+		
+		count = 1;
+	    for (Vacation vacation : vacationOptions) {
+	    	System.out.println(vacation.toString());
+    		++count;
+	    }
 	    
 	    System.exit(0);	    
 	}
