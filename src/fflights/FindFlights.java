@@ -8,7 +8,6 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 import fflights.patterns.FlightReader;
 import fflights.patterns.FlightReaderFactory;
@@ -147,30 +146,19 @@ public class FindFlights {
     	}
     	
 		//  Sort by Estimated Costs
-		Collections.sort(vacationOptions, new Comparator<Vacation>() {
-			@Override
-			public int compare(Vacation v1, Vacation v2) {
-				int cost = v1.getVacationCostEstimate() - v2.getVacationCostEstimate();
-				if (cost == 0) {
-					int distance = v1.getDistanceFromOrigin() - v2.getDistanceFromOrigin();
-					if (distance == 0) {
-						double rating = v1.getHotelRating() - v2.getHotelRating();
-						if (Math.abs(rating) < 0.01) {
-							int reviews = v2.getNumReviews() - v1.getNumReviews();	
-							//System.out.println("CRAP:" + v1.getNumReviews());
-							return reviews;
-						}
-						return (int) rating;
-					}
-					return distance;
-				}
-				return cost;
-			}
-		});
+		Collections.sort(vacationOptions);
 		
 		count = 1;
 	    for (Vacation vacation : vacationOptions) {
-	    	System.out.println(vacation.toString());
+	    	System.out.println("VACATION: " + count + ":" + vacation.toString());
+    		++count;
+	    }
+	    
+		count = 1;
+		System.out.println("");
+		System.out.println("airport_country,airport_city,flight_cost,distance_from_origin,hotel_country,hotel_city,hotel_name,hotel_cost,hotel_rating,number_hotel_reviews,distance_from_airport");
+	    for (Vacation vacation : vacationOptions) {
+	    	System.out.println(vacation.toCSV());
     		++count;
 	    }
 	    

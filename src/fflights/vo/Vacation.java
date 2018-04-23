@@ -1,6 +1,6 @@
 package fflights.vo;
 
-public class Vacation {
+public class Vacation implements Comparable<Vacation> {
 	private int    distance_from_origin;
 	private int    flight_cost;
 	private int    hotel_cost_estimate;
@@ -51,12 +51,9 @@ public class Vacation {
         }
     }
     
-	//Fields omitted for brevity.
     private Vacation() {
-        //Constructor is now private.
     }
     
-    //Getters and setters omitted for brevity.
     public String toString() {
     	String airport_location = airport_country + ", " + airport_city;
     	String hotel_location   = hotel_country   + ", " + hotel_city;
@@ -68,7 +65,7 @@ public class Vacation {
     		airport_location =    "Location:         " + airport_location + "\n\t";
     		hotel_location   =    "";
     	}
-    	String vacation         = "VACATION:\n\t" +
+    	String vacation         = "\n\t" +
     	                           airport_location +
                 				  "Flight Cost:      $" + flight_cost + " USD\n\t" +
                 				  "Flight Distance:  " + distance_from_origin + " miles\n\t" +
@@ -77,10 +74,25 @@ public class Vacation {
     							  "Hotel Cost:       " + hotel_cost + "\n\t" +
     							  "Hotel Rating:     " + hotel_rating + "\n\t" +
     							  "Hotel # Reviews:  " + number_hotel_reviews + "\n\t" +
-    							  "Hotel Distance:   " + String.format("%.2f", distance_from_airport) + " miles from airport\n\t";
+    							  "Hotel Distance:   " + String.format("%.2f", distance_from_airport) + " miles from airport";
     	return vacation;
     }
     
+    public String toCSV() {
+    	String vacation         =  airport_country      + ","       + 
+    	                           airport_city         + ","       +
+                				   "$" + flight_cost    + " USD,"   +
+                				   distance_from_origin + " miles," +
+                				   hotel_country        + ","       + 
+                				   hotel_city           + ","       +
+    							   hotel_name           + ","       +
+    							   hotel_cost           + ","       +
+    							   hotel_rating         + ","       +
+    							   number_hotel_reviews + ","       +
+    							   String.format("%.2f", distance_from_airport) + " miles";
+    	return vacation;
+    }
+
     public int getVacationCostEstimate() {
     	return hotel_cost_estimate + flight_cost;
     }
@@ -95,5 +107,49 @@ public class Vacation {
     
     public int getNumReviews() {
     	return number_hotel_reviews;
+    }
+    
+    @Override
+    public int compareTo(Vacation other) {
+    	// The comparison is prioritized by:
+    	//  1. cost (flight + estimated hotel price)
+    	//  2. distance
+    	//  3. hotel rating
+    	//  4. number of reviews
+    	
+    	int cost = getVacationCostEstimate() - other.getVacationCostEstimate();
+    	if (cost > 0) {
+    		return 1;
+    	}
+		if (cost < 0) {
+			return -1;
+		}
+		
+		int distance = getDistanceFromOrigin() - other.getDistanceFromOrigin();
+		if (distance > 0) {
+    		return 1;
+    	}
+		if (distance < 0) {
+			return -1;
+		}
+		
+		int rating = (int) ((getHotelRating() - other.getHotelRating()) * 10.0);
+		if (rating > 0) {
+    		return -1;
+    	}
+		if (rating < 0) {
+			return 1;
+		}
+		
+		int reviews = getNumReviews() - other.getNumReviews();	
+		if (reviews > 0) {
+    		return -1;
+    	}
+		if (reviews < 0) {
+			return 1;
+		}
+		
+		//  The two Vacations are equal.
+		return 0;
     }
 }
