@@ -64,7 +64,7 @@ public class FindFlights {
     //                             distance
     //                           }
     //                         }
-	//                       }
+    //                       }
     //                     }"""
 
     public static void main(String... args) {
@@ -147,7 +147,7 @@ public class FindFlights {
             .collect(toList());
 
 //      DEVELOPER NOTE: Uncomment the following lines to debug the filtered
-//                        photo data
+//                      photo data
 //        count = 1;
 //        for (Photo photo : filteredPhotos) {
 //            System.out.println("FILTERPHOTO:" + count + ":" + photo.toString());
@@ -155,8 +155,8 @@ public class FindFlights {
 //        }
 
         // DEVELOPER NOTE: We need to iterate over the filtered photos and the
-        //                   filtered flights and keep track of the Location and
-        //                   unique Flight data where the flight is close to where
+        //                 filtered flights and keep track of the Location and
+        //                 unique Flight data where the flight is close to where
         //                 the photos were taken.
         // TODO: __DEVELOPER_NAME__: April 23, 2018:
         //       There should be a cleaner way to do this but it is fast enough for now.
