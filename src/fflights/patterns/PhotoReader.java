@@ -5,5 +5,5 @@ import java.util.List;
 import fflights.vo.Photo;
 
 public interface PhotoReader {
-	public List<Photo> getPhotos();
+    public List<Photo> getPhotos();
 }
