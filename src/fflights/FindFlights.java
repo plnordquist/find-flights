@@ -146,13 +146,17 @@ public class FindFlights {
                          t.getMood().equalsIgnoreCase(programOptions.getReactions()))
             .collect(toList());
 
+
 //      DEVELOPER NOTE: Uncomment the following lines to debug the filtered
 //                      photo data
-//        count = 1;
-//        for (Photo photo : filteredPhotos) {
-//            System.out.println("FILTERPHOTO:" + count + ":" + photo.toString());
-//            ++count;
-//        }
+/**
+ *        count = 1;
+ *        for (Photo photo : filteredPhotos) {
+ *            System.out.println("FILTERPHOTO:" + count + ":" + photo.toString());
+ *            ++count;
+ *        }
+ * 
+ */
 
         // DEVELOPER NOTE: We need to iterate over the filtered photos and the
         //                 filtered flights and keep track of the Location and

@@ -2,7 +2,7 @@ package fflights.vo;
 
 import java.util.StringJoiner;
 
-/*
+/**
  * CRC Responsibilities
  *   - Hold information about a Facebook Photo
  *   - Answer questions about

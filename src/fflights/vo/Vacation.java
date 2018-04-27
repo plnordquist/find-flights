@@ -2,7 +2,7 @@ package fflights.vo;
 
 import java.util.StringJoiner;
 
-/*
+/**
  * CRC Responsibilities
  *   - Hold information about a Vacation (Flight and Hotel)
  *   - Answer questions about
